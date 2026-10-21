@@ -1,0 +1,26 @@
+{
+  "T_4layer": {
+    "loss": 0.022606667684267643,
+    "layers": 4,
+    "shared": false,
+    "params": 2048
+  },
+  "S1_1layer": {
+    "loss": 0.0788226882795485,
+    "layers": 1,
+    "shared": false,
+    "params": 512
+  },
+  "S2_2layer": {
+    "loss": 0.04917850229305471,
+    "layers": 2,
+    "shared": false,
+    "params": 1024
+  },
+  "S4w_shared": {
+    "loss": 0.015926122130182883,
+    "layers": 4,
+    "shared": true,
+    "params": 512
+  }
+}

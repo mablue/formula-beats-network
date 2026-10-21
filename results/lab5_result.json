@@ -1,0 +1,32 @@
+{
+  "baseline": 0.014520891783219197,
+  "results": {
+    "1": {
+      "loss": 0.2264929084681475,
+      "params_per_layer": 32,
+      "vs_baseline": 15.597727181597064
+    },
+    "2": {
+      "loss": 0.19782095293454136,
+      "params_per_layer": 64,
+      "vs_baseline": 13.623195867567137
+    },
+    "4": {
+      "loss": 0.12943281831283793,
+      "params_per_layer": 128,
+      "vs_baseline": 8.91355849524439
+    },
+    "8": {
+      "loss": 0.051282454020576476,
+      "params_per_layer": 256,
+      "vs_baseline": 3.531632546138806
+    }
+  },
+  "combined": {
+    "rank": 8,
+    "bits": 4,
+    "loss": 0.07916815361309379,
+    "params_total": 4096,
+    "vs_baseline": 5.452017327515864
+  }
+}

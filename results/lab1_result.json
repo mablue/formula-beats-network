@@ -1,0 +1,53 @@
+[
+  {
+    "name": "tiny",
+    "params": 5952,
+    "hidden_cosine": 0.8295,
+    "logits_cosine": 0.645,
+    "per_layer": [
+      0.8297,
+      0.8293,
+      0.8295
+    ],
+    "compression_x": 13.91,
+    "size_fp32_KB": 23.8,
+    "size_bin_KB": 1.7,
+    "time_fp32_ms": 20.9,
+    "time_bin_ms": 20.0
+  },
+  {
+    "name": "small",
+    "params": 31488,
+    "hidden_cosine": 0.8254,
+    "logits_cosine": 0.6449,
+    "per_layer": [
+      0.8246,
+      0.8249,
+      0.825,
+      0.8254
+    ],
+    "compression_x": 19.53,
+    "size_fp32_KB": 126.0,
+    "size_bin_KB": 6.4,
+    "time_fp32_ms": 79.7,
+    "time_bin_ms": 73.2
+  },
+  {
+    "name": "medium",
+    "params": 93696,
+    "hidden_cosine": 0.7728,
+    "logits_cosine": 0.6448,
+    "per_layer": [
+      0.7739,
+      0.7739,
+      0.7735,
+      0.7737,
+      0.7728
+    ],
+    "compression_x": 22.57,
+    "size_fp32_KB": 374.8,
+    "size_bin_KB": 16.6,
+    "time_fp32_ms": 231.9,
+    "time_bin_ms": 159.8
+  }
+]

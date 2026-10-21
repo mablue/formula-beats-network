@@ -1,0 +1,85 @@
+{
+  "config": {
+    "D": 32,
+    "L": 4,
+    "FF": 64,
+    "V": 100,
+    "S": 48
+  },
+  "layer_contribution": [
+    0.9999,
+    0.9999,
+    0.9999,
+    0.9999
+  ],
+  "edge_only": {
+    "label": "edge@4b",
+    "h_cos": 0.9966,
+    "l_cos": 0.9913,
+    "argmax": 0.7917
+  },
+  "per_layer_quant": [
+    {
+      "label": "layer_0@4b",
+      "h_cos": 1.0,
+      "l_cos": 1.0,
+      "argmax": 1.0
+    },
+    {
+      "label": "layer_1@4b",
+      "h_cos": 1.0,
+      "l_cos": 1.0,
+      "argmax": 0.9792
+    },
+    {
+      "label": "layer_2@4b",
+      "h_cos": 1.0,
+      "l_cos": 1.0,
+      "argmax": 1.0
+    },
+    {
+      "label": "layer_3@4b",
+      "h_cos": 1.0,
+      "l_cos": 1.0,
+      "argmax": 1.0
+    }
+  ],
+  "all_4b": {
+    "label": "all@4b",
+    "h_cos": 0.9966,
+    "l_cos": 0.9913,
+    "argmax": 0.8125
+  },
+  "no_edge_4b": {
+    "label": "no-edge@4b",
+    "h_cos": 1.0,
+    "l_cos": 1.0,
+    "argmax": 1.0
+  },
+  "skip": [
+    {
+      "label": "skip_0",
+      "h_cos": 0.9999,
+      "l_cos": 0.9999,
+      "argmax": 1.0
+    },
+    {
+      "label": "skip_1",
+      "h_cos": 0.9999,
+      "l_cos": 0.9999,
+      "argmax": 0.9583
+    },
+    {
+      "label": "skip_2",
+      "h_cos": 0.9999,
+      "l_cos": 0.9999,
+      "argmax": 0.9583
+    },
+    {
+      "label": "skip_3",
+      "h_cos": 0.9999,
+      "l_cos": 0.9999,
+      "argmax": 1.0
+    }
+  ]
+}

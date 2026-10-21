@@ -1,0 +1,67 @@
+============================================================
+ lab33: مقیاس‌پذیری + تولید واقعی
+============================================================
+vocab=164 | train=5000 جمله | test=800 جمله
+نمونه: the captain cannot likes the city
+
+embedding: 16 بعد
+
+[1/2] مقایسه RF vs MLP در CTX=3 و CTX=5
+
+  CTX=3: train=22369 test=3662
+    MLP h=256  test=36.4% params=16384   time=28.3s
+    MLP h=512  test=38.3% params=32768   time=53.3s
+    RF  D=256  test=41.1% params=16384   time=0.52s
+    RF  D=512  test=42.5% params=32768   time=1.14s
+    RF  D=1024 test=43.2% params=65536   time=2.72s
+  scale                    [#######--------]  50% 
+  CTX=5: train=12369 test=2062
+    MLP h=256  test=27.2% params=24576   time=19.7s
+    MLP h=512  test=29.0% params=49152   time=36.9s
+    RF  D=256  test=30.8% params=24576   time=0.31s
+    RF  D=512  test=33.0% params=49152   time=0.65s
+    RF  D=1024 test=34.7% params=98304   time=1.67s
+  scale                    [###############] 100% 
+
+[2/2] تولید متن با بهترین مدل
+  بهترین: RF_ctx3_D1024 (test=43.2%)
+
+  تولید با argmax (det):
+    the cat                   → visits the newspaper rarely wants the newspaper rarely wants the
+    i think the               → teacher wants the newspaper rarely wants the newspaper rarely wants
+    do you know               → if the dog wants the newspaper rarely wants the newspaper
+    yesterday the old         → man wants the truth rarely wants the newspaper rarely wants
+    the beautiful             → girl wants the newspaper rarely wants the newspaper rarely wants
+    the teacher               → wants the newspaper rarely wants the newspaper rarely wants the
+
+  تولید با top-k=5 (sample):
+    the cat                   → wants Always problem always wants the newspaper carefully wants the
+    i think the               → teacher forgets yesterday brother although wants yesterday movie happily makes
+    do you know               → you the teacher makes Sometimes artist yesterday and doctor feels
+    yesterday the old         → chef wants the answer carefully nurse finally writes mountain coffee
+    the beautiful             → girl visits the painting finally watches happily the truth loudly
+    the teacher               → finds Slowly news usually likes quickly car quietly thinks finally
+
+============================================================
+ جدول نهایی
+============================================================
+  config               test_acc   params    
+  RF_ctx3_D1024        43.2       65536     
+  RF_ctx3_D512         42.5       32768     
+  RF_ctx3_D256         41.1       16384     
+  MLP_ctx3_h512        38.3       32768     
+  MLP_ctx3_h256        36.4       16384     
+  RF_ctx5_D1024        34.7       98304     
+  RF_ctx5_D512         33.0       49152     
+  RF_ctx5_D256         30.8       24576     
+  MLP_ctx5_h512        29.0       49152     
+  MLP_ctx5_h256        27.2       24576     
+
+============================================================
+ تحلیل نهایی
+============================================================
+  بهترین RF:   RF_ctx3_D1024 → 43.2%
+  بهترین MLP:  MLP_ctx3_h512 → 38.3%
+
+  ✓✓✓ RF با 4.9% اختلاف برنده → حرف تو در مقیاس بزرگ‌تر هم اثبات شد
+  ≈ CTX=3 و CTX=5 نزدیک → context بیشتر کمک نکرد

@@ -1,0 +1,23 @@
+============================================================
+ lab18-fix: MLP + RF چندلایه
+============================================================
+Vocab=31 DI=62 Train=520 Test=123 | Most-freq=21.1%
+
+[1/3] MLP lr=0.01 wd=1e-3
+  MLP lr=0.01 wd           [---------------]   0% loss=2.280 acc=30%              MLP lr=0.01 wd           [##-------------]  15% loss=1.939 acc=32%              MLP lr=0.01 wd           [####-----------]  30% loss=2.000 acc=33%              MLP lr=0.01 wd           [######---------]  45% loss=2.050 acc=35%              MLP lr=0.01 wd           [#########------]  60% loss=1.976 acc=33%              MLP lr=0.01 wd           [###########----]  75% loss=2.005 acc=32%              MLP lr=0.01 wd           [#############--]  90% loss=1.955 acc=36%            
+  → acc=35.0% loss=2.027
+
+[2/3] RF تک‌لایه
+  D=64   acc=31.7% loss=3.176
+  D=128  acc=30.1% loss=3.160
+  D=256  acc=33.3% loss=3.152
+
+[3/3] RF چندلایه
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/lab18.py", line 173, in <module>
+    a,l=run_stacked_rf(Xtr,Ytr,Xte,Yte,ls)
+        ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/lab18.py", line 150, in run_stacked_rf
+    L+=-math.log(p[y]+1e-9)
+                 ~^^^
+IndexError: list index out of range

@@ -1,0 +1,21 @@
+============================================================
+ lab22: Attention استاندارد vs Linear (فازی)
+============================================================
+V=29 | train=400 | test=80
+
+train samples: 1874 | test samples: 365
+Most-freq baseline: 16.7%
+
+[1/2] Standard Attention (softmax)
+  train                        [---------------]   1% loss=3.360 acc=1.5%  train                        [######---------]  40% loss=3.337 acc=2.2%  train                        [############---]  80% loss=3.311 acc=22.7%
+  acc=20.3% | loss=3.300 | time=22.3s
+
+[2/2] Linear Attention (φ=elu+1)
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/lab22.py", line 189, in <module>
+    train(m_lin, Xtr_seq, Ytr, epochs=100, lr=0.03)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/data/com.termux/files/home/lab22.py", line 102, in train
+    O=A_@V_
+      ~~^~~
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 2 is different from 16)
